@@ -2,8 +2,76 @@
 {% block body %}
     <h2>Certificate Signing Request</h2>
     <form action="{{ url_for('sign_csr') }}" method=post class=add-entry>
-    <textarea name=csr rows=20 cols=65></textarea>
+    <textarea name=csr rows=20 cols=65 style="font-family:courier"></textarea>
     <button name=signer type=submit value=client>Client</button>
     <button name=signer type=submit value=server>Server</button>
     </form>
+
+<pre>
+openssl req -new -utf8 -days 7301 \
+            -newkey rsa:4096 -nodes \
+            -subj "/CN=my name/O=org/C=CH/ST=ZH/L=Zurich" \
+            -keyout "my-private.key" -out "my.csr"
+</pre>
+<!--
+
+UTF-8
+-----BEGIN CERTIFICATE REQUEST-----
+MIIEnTCCAoUCAQAwWDEQMA4GA1UEAwwHbXkgbmFtZTEYMBYGA1UECgwPbXkgb3Jn
+YW5pc2F0aW9uMQswCQYDVQQGEwJDSDELMAkGA1UECAwCWkgxEDAOBgNVBAcMB1rD
+vHJpY2gwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQDUgwR/8lQSwfH0
+V/z32bimddb67C9T2t+yJD8LizUk/KIbAXHtSLCgmjbzK9AWMTp5Nt9aEOR1DUaO
+TApkhtZpZSOFZ65cdehHvCBdp5z9kqxo0hcM22KtpaGIl/bCYSlBKiU62yw2EH4c
+zC1NF7ksbXcAiU0/6CnavXE0CzvuCyo1oonAW15ShZhEys1s4ge5OwojdWGr1aNq
+aGoz4wxMpnue1eQNPDDaHZ8hpHdmy/LtpKenqOsB3QofWiGoZKMp9DDSk9E+q18G
+yiHOQDyiVUrn1sa9adYZJZvHPwc4bZiu7ZI1qbnJewkxy4zwNtMmrD7qxTJSnDvq
+Mvz36bYf/vZ/AcU4DqBfHRUQxppSa6F2w4VRq+h1qUM5dgKoBrWThDtQMEgHBWfP
+wx1nCaj+BF8v+Pi6UXqWM3Z4rYBV47gKBaVu4mxNQuMJN9KX3LyDrPBCLMZLe+yL
+eSnpfgzUxuWIojCBshTtNCMuKVsa3XILpOSgyI+mGH6SPGfHDoLb60rtBdbbLRTn
+xdKn0ZmGJmeT1TI9U+quy5imGVHpPhyaDgMI31Rhy2CJZ/PRqlskQQG/k4eM0ayN
+gNjrNoX7SLCQzdJw3KT51b4ldji6w12/S+nUuo97UVQpbNik9Z7jMM7a4IqNpPHk
+HQnZFb3/5HZKQEHzMYkaQvanFRW6pwIDAQABoAAwDQYJKoZIhvcNAQELBQADggIB
+ACtfF1KZGuMuXpnU8KawCxkSS0Bj/vtCOmxoMAj2QZLnSGJeuSvWbqsK5xYjxm3b
+fasuHmkHdk9t9N8I53k0TA5UBcL+bSoO47HAFGhPSoPrr+WBDJjYw6uOS+K1s13s
+0wAxp1xb/1zTdMh15WYW66R+8j10J6zOQmsIPHBdnrz8TD/PNV/HdnE4PSab6RuK
+OYE16vmjpfDJ/0gGegZiCKxpFQOzkUCvyF/s8RXubBdlvW56wnxnlFf6Hxnlrb5A
+TY9c+wyMG0D0+Dsx3Zec81Ev09rSB08aa6p9XNuzlDX7qkm6lGwDm79N7fOIaoQN
+7JB4arw3YbvoArKFFUZmFWZhgDvd8qIVSTmAINTHYHc5Zw3NAfEbhAkN5jhkWTs7
+QhHf8ALoJCmHY2iqlDDV4YoFzhSmAlSgGThxKHH3cZmj5fWKDnN96ZIvXMAatEFW
+LiSir4NFGbL11sBjLjNszmTRIKYVx251/EQQ5rbXVQoHDkzQyAf47y8IaLURZIgj
+3Sz8pAt0IRswtsfx8d2TE7ezNVEz17kfNeqeiUWguKxpf0U/9N9whkmpcvL37bUi
+c7W6JVxy94HKKQOeQrxp9O2VJljqXYHVHPJnDyxiEx0vYVNTnrRpKBqGlVsKTtGo
+1GMoekB6BogB9xXXjh8c1tQ6aze4kd3yaOPq9/53LrxP
+-----END CERTIFICATE REQUEST-----
+
+ASCII
+-----BEGIN CERTIFICATE REQUEST-----
+MIIEpDCCAowCAQAwXzEUMBIGA1UEAwwLY2xpZW50IG5hbWUxHDAaBgNVBAoME2Ns
+aWVudCBvcmdhbmlzYXRpb24xCzAJBgNVBAYTAkNIMQswCQYDVQQIDAJaSDEPMA0G
+A1UEBwwGWnVyaWNoMIICIjANBgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEA222M
+9PhK/jt9F3JooOlBv2WCQV2aCrYVLUpuvAS/5bD3zLYJSyriT5cGDZzucQYvBtxa
+V0T1Z0iYYlsMDjJwCZR3rOMFObDDrJyXi+ufCDm/X7OaZP9GxAbuB8JlP72HJsbu
+/jg2+FDsLWU3xiDq5nCszdKBUMUYSBatJKjqKqXvc//Y8I7SWMoF6TN5yT0X5lXy
+RfJREloDzDah8bsjczLsbmCLMPr0ib93gDVqj7ZfeTaJfXUQqG0a4abtj8iRAm2v
+v5MxGTYpKWLe0902roEaJXZUtZ9qByu9vxWb3WJbqK23kqYBotmninOoOLfuzpRH
+m1Q429rrYz5oAFz+jHX6x03QjDZCe4cdIw1ETIBPAOWmQ/rC7EUTBWw+yXhBVzip
+D77JWcKb5123eX+871PNANRJIxPi88Wvgz/hmSaAVRXuHYZXTdjeRbNIxV7Y1Gj0
+m3xhZUVkQiLNKGOiqtM0CVXnm8CHqV/6ntrCuDdF6eURHLHvCMfP+sJdn6PRpgJl
+YvfhDiieO8uIFbCSoZL/j/nWtmW94qxnmUrDWBAcrfkJjOp/P3CfYu1ap1bfH2sF
+lZAluWp0bDz4USlkhxJOiA23498WvyNnKgtdnS/Z9qbjdU/uW9JOoZm8PTxy1AC9
+AruWQpnOPbw4/RZiFceVoMn92VVYpqdtx7k+xsUCAwEAAaAAMA0GCSqGSIb3DQEB
+CwUAA4ICAQDNbpevrlBcMy98xQEAad/GwCjzh1oee7Lpq1gDaQFQnhU2Fm9xZkIA
+K5Fmwx3czy84mi/OlmSNipd55aae4Atsv/X+qmgVThgTybMsS3T4FwKkO8Cb0E1h
+bTrR0EpblwYtWYWYqp7Hmz31duDyK8zUkgvXIVeUVDXJGbfW6yJV5JbCngB7J3rI
+RRw1ktqkE/aGrzThalcVZS1u6oXL9aGHYEOMZwTIUqOF6vQZJeX5C4uybxO9Bmlw
+Rdux2FFV3CUiwk9rTveD+2rKl1IpHW+Z02IlAASfR6qpqV+JiE808LZh40RmpYtr
+pn4VrrlbUhsRE2TdB2/eT5coT7VUobEhA7LMiDAc2HUMiaMwqPj8KmLHVwamD6Ah
+EASvZt7UA4Vw3gtcKB1fTBDeqa59SByr8pH42cNI1tAQ8iC9El869mY5gI0CIRZv
+UDBCqMpOlugQiTXqXPCh/JO8WDRkW7TPIb5yUz5Q+nioQC1wfsu5z0v2XfQpyNu8
+C8SHAICl9+HoG09lP4q8c0dLMZAvdTkAkQ/c5kI3iWwNKVzdhcHVTP4XSCmpxuku
+QD/ar8Ua0598qnu3v9QmgwsrgIVZkJBUzGQ/vdP2DoZ5DKr/zvHjBs1xTMizT4Di
+N9PueMchbfpNzwweliAW6P/qGbK1ySnOwDozmdeKLHg4X5/KvRuzMw==
+-----END CERTIFICATE REQUEST-----
+
+-->
 {% endblock %}

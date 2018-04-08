@@ -1,10 +1,12 @@
+# -*- coding: utf-8 -*-
+
 from setuptools import setup , find_packages
 
 setup(
     name='moca',
     #packages=['moca'],
 
-    description='Simple microblog example using Flask',
+    description='Mini-CA using Flask',
     packages=find_packages(),
     entry_points='''
         [flask.commands]
