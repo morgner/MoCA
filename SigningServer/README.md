@@ -37,6 +37,9 @@ virtualenv env--moca
 . env-moca/bin/activate 
 pip install --editable .
 
+./create-CA-ec.sh
+
+
 # Run
 ## application
 
