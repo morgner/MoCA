@@ -21,3 +21,6 @@ CERTIFICATES
 __pycache__
 *.db
 *.tbz2
+
+env-moca
+moca.egg-info

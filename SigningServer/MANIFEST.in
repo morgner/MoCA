@@ -1,2 +1,2 @@
-graft maca/templates
-graft maca/static
+graft moca/templates
+graft moca/static

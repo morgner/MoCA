@@ -32,9 +32,10 @@ setenforce 1
 #!usermod -a -G uswgi-user-name nginx
 ```
 
-# virtualenv (optional)
-
-`pip install --editable .`
+cd MoCA/SigningServer
+virtualenv env--moca
+. env-moca/bin/activate 
+pip install --editable .
 
 # Run
 ## application
