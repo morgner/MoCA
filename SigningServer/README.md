@@ -31,15 +31,15 @@ semodule -i nginx.pp
 setenforce 1
 #!usermod -a -G uswgi-user-name nginx
 ```
+## Prepare signing-server
 
-cd MoCA/SigningServer
+```cd MoCA/SigningServer
 virtualenv env--moca
 . env-moca/bin/activate 
 pip install --editable .
 
 ./create-CA-ec.sh
-
-
+```
 # Run
 ## application
 
