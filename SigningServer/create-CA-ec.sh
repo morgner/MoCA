@@ -46,8 +46,6 @@ HISTORY="${WORKDIR}/CERTIFICATES"
 rm -f ${HISTORY}
 
 mkdir -p CA
-mkdir -p client
-mkdir -p server
 
 DIR_CA="${WORKDIR}/CA"
 
