@@ -34,7 +34,7 @@ setenforce 1
 ## Prepare signing-server
 
 ```cd MoCA/SigningServer
-virtualenv env--moca
+virtualenv env-moca
 . env-moca/bin/activate 
 pip install --editable .
 
