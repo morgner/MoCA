@@ -48,5 +48,7 @@ pip install --editable .
 
 ## uwsgi
 
+For productive use, this script need to get some security adaptions:
+
 `./urun.sh`
 
