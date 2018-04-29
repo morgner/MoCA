@@ -5,7 +5,7 @@ if [ ! -d /run/moca ]
   echo " >> have to enable nginx to use the socket:"
   set -x
   sudo mkdir /run/moca
-  sudo chdir 0777 /run/moca
+  sudo chmod 0777 /run/moca
   set +x
   fi
 
