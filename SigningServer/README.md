@@ -35,9 +35,10 @@ setenforce 1
 
 ```bash
 cd MoCA/SigningServer
-virtualenv env-moca
+virtualenv -p python2 env-moca
 . env-moca/bin/activate 
 pip install --editable .
+pip install pyopenssl
 
 ./create-CA-ec.sh
 ```
