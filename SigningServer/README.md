@@ -39,6 +39,7 @@ virtualenv -p python2 env-moca
 . env-moca/bin/activate 
 pip install --editable .
 pip install pyopenssl
+pip install uwsgi
 
 ./create-CA-ec.sh
 ```
